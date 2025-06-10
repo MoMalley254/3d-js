@@ -8,6 +8,44 @@
     <title>Solar 3D</title>
   </head>
   <body>
+    <!-- Simple label at top-left -->
+    <div id="myGui" style="
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 8px 12px;
+      font-family: sans-serif;
+      font-size: 14px;
+      border-radius: 4px;
+      z-index: 10;
+    ">
+      <button id="fullScreenBtn">FullScreen</button>
+      <p id="focusControls" style="display: none;">
+        Focused on: <span id="focusName">Nothing</span> </br>
+        <span id="focusLabel"></span> </br>
+        Clear Focus: <span id="clearFocus">Clear</span> </br>
+      </p>
+    </div>
+    <div style="
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 8px 12px;
+      font-family: sans-serif;
+      font-size: 14px;
+      border-radius: 4px;
+      z-index: 10;
+    " id="shotcuts">
+      <p> Keyboard Shortcuts : </p>
+      <p> Enter FullScreen : F </p>
+      <p> Exit FullScreen : Esc </p>
+      <p> Stop Focus : Space/ S </p>
+  </div>
+
     <canvas id="solar3D"></canvas>
     <script type="module" src="/src/main.js"></script>
   </body>
