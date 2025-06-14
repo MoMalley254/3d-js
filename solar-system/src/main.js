@@ -1,8 +1,11 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-let scene, camera, renderer, controls, textureLoader, focusObject = null, sphereGeometry, orbits= {}, moonOrbits = {}, planets = [], moons =[];
+let scene, camera, renderer, controls, textureLoader; 
+let focusObject = null, sphereGeometry, orbits= {}, moonOrbits = {}, planets = [], moons =[];
 let solarSystem;
+let zoomSpeed = 0.05;
+
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
 
@@ -490,6 +493,14 @@ window.addEventListener('keydown', (e) => {
       fullscreenMod(false);
       break;
 
+    // case 'ArrowUp':
+    //   zoomIn();
+    //   break;
+
+    // case 'ArrowDown':
+    //   zoomOut();
+    //   break;
+
     default:
       // Ignore other keys
       break;
@@ -517,6 +528,16 @@ function fullscreenMod(state) {
       document.msExitFullscreen();
     }
   }
+}
+
+function zoomIn() {
+  console.log(`Zooming in ${camera.position.y}`);
+  // camera.position.y -= zoomSpeed;
+}
+
+function zoomOut() {
+  console.log(`Zooming out ${camera.position.y}`);
+  // camera.position.y += zoomSpeed;
 }
 
 initScene();
